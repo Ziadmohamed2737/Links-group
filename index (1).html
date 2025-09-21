@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="جروبات واتساب لمواد إعدادي هندسة - انضم لمجموعات المواد الدراسية">
+    <meta name="keywords" content="هندسة, إعدادي, مواد دراسية, واتساب, جروبات, ميكانيكا, رياضيات, فيزياء, برمجة">
+    <title>جروبات واتساب لمواد إعدادي هندسة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0253A4;
+            --secondary-color: #0058B0;
+            --accent-color: #7f8c8d;
+            --dark-bg: rgba(0, 0, 0, 0.8);
+            --light-text: #ecf0f1;
+            --muted-text: #bdc3c7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #000000, #587CA0, #7f8c8d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--dark-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            padding: 30px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid #FF000061;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.95);
+            transition: transform 0.5s ease;
+        }
+        
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile i {
+            font-size: 70px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, #FFFFFF, var(--light-text));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: var(--muted-text);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .link-item:hover {
+            transform: translateY(-5px) !important;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .link-item:hover .icon {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .link-item:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 15px;
+            font-size: 28px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .whatsapp .icon { background: linear-gradient(45deg, #25D366, #128C7E); }
+        .math .icon { background: linear-gradient(45deg, #8e44ad, #9b59b6); }
+        .physics .icon { background: linear-gradient(45deg, #e74c3c, #c0392b); }
+        .mechanics .icon { background: linear-gradient(45deg, #3498db, #2980b9); }
+        .chemistry .icon { background: linear-gradient(45deg, #16a085, #1abc9c); }
+        .drawing .icon { background: linear-gradient(45deg, #f39c12, #d35400); }
+        .english .icon { background: linear-gradient(45deg, #34495e, #2c3e50); }
+        .programming .icon { background: linear-gradient(45deg, #08BB96, #0D329D); }
+        
+        .link-text {
+            flex-grow: 1;
+        }
+        
+        .link-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .link-text p {
+            color: #bbb;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+   
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .profile {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+
+        .whatsapp:hover { background: linear-gradient(45deg, rgba(37, 211, 102, 0.2), rgba(18, 140, 126, 0.2)); }
+        .math:hover { background: linear-gradient(45deg, rgba(142, 68, 173, 0.2), rgba(155, 89, 182, 0.2)); }
+        .physics:hover { background: linear-gradient(45deg, rgba(231, 76, 60, 0.2), rgba(192, 57, 43, 0.2)); }
+        .mechanics:hover { background: linear-gradient(45deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2)); }
+        .chemistry:hover { background: linear-gradient(45deg, rgba(22, 160, 133, 0.2), rgba(26, 188, 156, 0.2)); }
+        .drawing:hover { background: linear-gradient(45deg, rgba(243, 156, 18, 0.2), rgba(211, 84, 0, 0.2)); }
+        .english:hover { background: linear-gradient(45deg, rgba(52, 73, 94, 0.2), rgba(44, 62, 80, 0.2)); }
+        .programming:hover { background: linear-gradient(45deg, rgba(230, 126, 34, 0.2), rgba(211, 84, 0, 0.2)); }
+        
+    
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                border-radius: 15px;
+            }
+            
+            .header h1 { 
+                font-size: 2rem;
+                margin-bottom: 8px;
+            }
+            
+            .header p { 
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .profile {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profile i {
+                font-size: 50px;
+            }
+            
+            .link-item { 
+                padding: 15px;
+                flex-direction: row;
+            }
+            
+            .icon { 
+                width: 50px; 
+                height: 50px; 
+                font-size: 24px;
+                margin-left: 10px;
+                margin-right: 0;
+            }
+            
+            .link-text h3 { 
+                font-size: 1.1rem;
+            }
+            
+            .link-text p { 
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .link-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .icon {
+                margin-left: 0;
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: floatParticle linear infinite;
+        }
+        
+        @keyframes floatParticle {
+            to {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+    
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: rgba(10, 10, 10, 0.8);
+            }
+            
+            .link-item {
+                background: rgba(255, 255, 255, 0.08);
+            }
+        }
+        
+
+        .will-change {
+            will-change: transform, opacity;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="profile will-change">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq69lK-UgP0_0uPjyiqmsmUHt-Nt8jJ-vRIDpmx6pjkw&s=10" alt="GEI Logo">
+            </div>
+            <h1 class="will-change">  معهد الجيزه - GEI   </h1>
+            <p class="will-change">انضم لمجموعات الواتساب لمواد إعدادي هندسة للاستفادة من المناقشات والمواد الدراسية والاستعداد للامتحانات</p>
+        </div>
+        
+        <div class="links">
+            <a href="https://chat.whatsapp.com/CIoKxbu5ZIt0DXSHPD1qcC?mode=ems_copy_t" class="link-item whatsapp mechanics will-change" target="_blank" rel="noopener noreferrer">
+                <div class="icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Mechanics group </h3>
+                    <p>انضم لمجموعة الميكانيكا للمناقشات والاستفسارات</p>
+                </div>
+            </a>
+            
+            <a href="https://www.instagram.com/el___zero?igsh=MWk5NHNwNXhmb3Rvag==" class="link-item whatsapp math will-change" target="_blank" rel="noopener noreferrer">
+                <div class="icon">
+                    <i class="fas fa-square-root-alt"></i>
+                </div>
+                <div class="link-text">
+                    <h3> MATH GROUP</h3>
+                    <p>مجموعة الرياضيات لحل المسائل والمناقشات العلمية</p>
+                </div>
+            </a>
+            
+            <a href="https://chat.whatsapp.com/مثال_رابط_الفيزياء" class="link-item whatsapp physics will-change" target="_blank" rel="noopener noreferrer">
+                <div class="icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <div class="link-text">
+                    <h3> Physics Group</h3>
+                    <p>انضم لمجموعة الفيزياء للمناقشات والتجارب العلمية</p>
+                </div>
+            </a>
+            
+            <a href="https://chat.whatsapp.com/مثال_رابط_الكيمياء" class="link-item whatsapp chemistry will-change" target="_blank" rel="noopener noreferrer">
+                <div class="icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Chemistry group </h3>
+                    <p>مجموعة الكيمياء للمناقشات والتجارب المعملية</p>
+                </div>
+            </a>
+            
+            <a href="https://chat.whatsapp.com/مثال_رابط_الرسم" class="link-item whatsapp drawing will-change" target="_blank" rel="noopener noreferrer">
+                <div class="icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <div class="link-text">
+                    <h3>  drawing and projection group  </h3>
+                    <p>انضم لمجموعة الرسم الهندسي لتبادل الخبرات والأفكار</p>
+                </div>
+            </a>
+            
+            <a href="https://chat.whatsapp.com/مثال_رابط_الانجليزي" class="link-item whatsapp english will-change" target="_blank" rel="noopener noreferrer">
+                <div class="icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <div class="link-text">
+                    <h3>ENGLISH GROUP   </h3>
+                    <p>مجموعة اللغة الإنجليزية لتحسين المهارات اللغوية</p>
+                </div>
+            </a>
+
+            <a href="https://chat.whatsapp.com/مثال_رابط_البرمجة" class="link-item whatsapp programming will-change" target="_blank" rel="noopener noreferrer">
+                <div class="icon">
+<i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Programming Group</h3>
+                    <p>انضم لمجموعة البرمجة لتعلم ومشاركة المشاريع البرمجية</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p> © Developed by : Zeyad Mohamed Anter </p>
+            <p>© <span id="current-year"></span></p>
+            <div class="social-icons">
+                <a href="https://wa.me/qr/J2XMO34W4YYKA1"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/Ziadmohamed2025"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/el___zero?igsh=MWk5NHNwNXhmb3Rvag=="><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 20 : 30;
+            
+          
+            particlesContainer.innerHTML = '';
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+            
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+          
+                const colors = [
+                    'rgba(44, 62, 80, 0.5)',
+                    'rgba(127, 140, 141, 0.5)',
+                    'rgba(236, 240, 241, 0.4)',
+                    'rgba(189, 195, 199, 0.5)'
+                ];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+           
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `floatParticle ${duration}s linear infinite`;
+                
+
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+    
+        function animateElements() {
+            const headerTitle = document.querySelector('.header h1');
+            const headerDesc = document.querySelector('.header p');
+            const links = document.querySelectorAll('.link-item');
+            
+
+            setTimeout(() => {
+                document.querySelector('.profile').style.transform = 'scale(1)';
+                
+                if (headerTitle) {
+                    headerTitle.style.opacity = '1';
+                    headerTitle.style.transform = 'translateY(0)';
+                }
+                
+                if (headerDesc) {
+                    headerDesc.style.opacity = '1';
+                    headerDesc.style.transform = 'translateY(0)';
+                }
+            }, 300);
+            
+
+            links.forEach((link, index) => {
+                setTimeout(() => {
+                    link.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    link.style.opacity = '1';
+                    link.style.transform = 'translateY(0)';
+                }, 500 + index * 150);
+            });
+        }
+        
+    
+        function updateCurrentYear() {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        }
+        
+
+        function handleResize() {
+            clearTimeout(window.resizeTimer);
+            window.resizeTimer = setTimeout(() => {
+                createParticles();
+            }, 200);
+        }
+        
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            animateElements();
+            updateCurrentYear();
+            
+
+            window.addEventListener('resize', handleResize);
+        });
+    </script>
+</body>
+</html>
